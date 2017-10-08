@@ -73,7 +73,7 @@ class LinkedListSumLists
 
 		display(list2);
 
-		Node list3 = sumLists(list, list2);
+		Node list3 = sumLists2(list, list2);
 
 		display(list3);
 	}
@@ -87,6 +87,77 @@ class LinkedListSumLists
 			cur = cur.next;
 		}
 		System.out.println();
+	}
+
+	public static Node sumLists2(Node list1, Node list2)
+	{
+		Node cur1 = list1;
+		Node cur2 = list2;
+		int sum = 0;
+		int prev = 0;
+		Node list3 = null;
+		while(cur1!=null || cur2!=null)
+		{
+			if(cur1!=null)
+			{
+				sum = cur1.data;
+			}
+			if(cur2!=null)
+			{
+				sum += cur2.data;
+			}
+			sum += prev;
+			int data = sum % 10;
+			sum = sum/10;
+			prev = sum;
+			sum = 0;
+			Node newNode = new Node();
+			newNode.data = data;
+			newNode.next = null;
+
+			if(list3 == null)
+			{
+				list3 = newNode;
+			}
+			else
+			{
+				Node nCur = list3;
+				while(nCur.next!=null)
+				{
+					nCur = nCur.next;
+				}
+				nCur.next = newNode;
+			}
+			if(cur1!=null)
+			{
+				cur1 = cur1.next;
+			}
+			if(cur2!=null)
+			{
+				cur2 = cur2.next;
+			}
+		}
+		if(prev!=0)
+		{
+			Node newNode = new Node();
+			newNode.data = prev;
+			newNode.next = null;
+
+			if(list3 == null)
+			{
+				list3 = newNode;
+			}
+			else
+			{
+				Node nCur = list3;
+				while(nCur.next!=null)
+				{
+					nCur = nCur.next;
+				}
+				nCur.next = newNode;
+			}
+		}
+		return list3;
 	}
 
 	public static Node sumLists(Node list1, Node list2)
