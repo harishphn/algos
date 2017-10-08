@@ -47,15 +47,15 @@ public class LinkedListsKTHElement
 			cur = cur.next;
 		}
 
-		System.out.println("Enter the linked list position from the end");
+		System.out.println("\nEnter the linked list position from the end");
 
 		int pos = scan.nextInt();
 
-		System.out.println(pos + "th element from end is: " + getKthElement(list));
+		System.out.println("element " + pos + " from end is: " + getKthElement(list, pos));
 		
 	}
 
-	public static int getKthElement(Node list)
+	public static int getKthElement(Node list, int pos)
 	{
 		if(list==null)
 		{
@@ -63,8 +63,31 @@ public class LinkedListsKTHElement
 		}
 
 		Node cur = list;
-		Node fast = list;
 		int count = 0;
+
+		while(cur!=null)
+		{
+			cur=cur.next;
+			count++;
+		}
+
+		if(pos>count)
+		{
+			return -1;
+		}
+
+		int temp = count-pos;
+
+		cur = list;
+
+		while(temp>0)
+		{
+			cur = cur.next;
+			temp--;
+		}
+
+		/*Node fast = list;
+		int count = 1;
 
 		while(fast!=null)
 		{
@@ -76,6 +99,9 @@ public class LinkedListsKTHElement
 			cur = cur.next;
 			count++;
 		}
-		return count;
+		System.out.println("Middle element is " + cur.data);*/
+
+
+		return cur.data;
 	}
 }
