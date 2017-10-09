@@ -1,3 +1,5 @@
+
+package CTCI;
 /*
 Write a method to replace all the spaces in a string with ‘%20’. 
 You may assume that the string has sufficient space at the end to hold the additional characters, 
@@ -42,5 +44,7 @@ public class URLify
 		}
 		String s = new String(sChars);
 		System.out.println(s);
+		
+		scan.close();
 	}
 }

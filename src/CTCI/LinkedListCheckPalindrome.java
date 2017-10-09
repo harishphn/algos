@@ -1,22 +1,19 @@
+package CTCI;
+
 import java.util.Scanner;
 
-class Node
-{
-	public char data;
-	public Node next;
-}
 
 class LinkedListCheckPalindrome
 {
 	public static void main(String[] args)
 	{
 		Scanner scan = new Scanner(System.in);
-		Node list = null;
+		Node<Character> list = null;
 		System.out.println("Enter linkedlist data. Enter -1 to stop");
 		char data = scan.next().charAt(0);
 		while(data!='X')
 		{
-			Node newNode = new Node();
+			Node<Character> newNode = new Node<Character>();
 			newNode.data = data;
 			newNode.next = null;
 
@@ -26,7 +23,7 @@ class LinkedListCheckPalindrome
 			}
 			else
 			{
-				Node cur = list;
+				Node<Character> cur = list;
 				while(cur.next!=null)
 				{
 					cur = cur.next;
@@ -39,7 +36,7 @@ class LinkedListCheckPalindrome
 
 		System.out.println("Given linkedlist data");
 
-		Node cur = list;
+		Node<Character> cur = list;
 		while(cur!=null)
 		{
 			System.out.print(cur.data + " ");
@@ -47,11 +44,13 @@ class LinkedListCheckPalindrome
 		}
 
 		System.out.println("\nGiven linked list is a palindrome: " + isPalindrome(list));
+		
+		scan.close();
 	}
 
-	public static void display(Node  list)
+	public static void display(Node<Character>  list)
 	{
-		Node cur = list;
+		Node<Character> cur = list;
 		while(cur!=null)
 		{
 			System.out.print(cur.data + " ");
@@ -59,20 +58,20 @@ class LinkedListCheckPalindrome
 		}
 	}
 
-	public static boolean isPalindrome(Node list)
+	public static boolean isPalindrome(Node<Character> list)
 	{
 		if(list == null)
 		{
 			return false;
 		}
 
-		Node tempList = null;
+		Node<Character> tempList = null;
 
-		Node cur = list;
+		Node<Character> cur = list;
 
 		while(cur!=null)
 		{
-			Node newNode = new Node();
+			Node<Character> newNode = new Node<Character>();
 			newNode.data = cur.data;
 			newNode.next = null;
 
@@ -89,7 +88,7 @@ class LinkedListCheckPalindrome
 		}
 
 		cur = list;
-		Node tCur = tempList;
+		Node<Character> tCur = tempList;
 		while(cur!=null)
 		{
 			if(cur.data!=tCur.data)

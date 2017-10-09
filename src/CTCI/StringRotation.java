@@ -1,3 +1,4 @@
+package CTCI;
 import java.util.Scanner;
 
 public class StringRotation
@@ -18,5 +19,6 @@ public class StringRotation
 		{
 			System.out.println("Not a rotation");
 		}
+		scan.close();
 	}
 }

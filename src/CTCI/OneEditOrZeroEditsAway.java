@@ -1,3 +1,5 @@
+package CTCI;
+
 import java.util.Scanner;
 
 public class OneEditOrZeroEditsAway
@@ -26,6 +28,7 @@ public class OneEditOrZeroEditsAway
 		{
 			System.out.println("False");
 		}
+		scan.close();
 	}
 	public static boolean checkReplace(String str1, String str2)
 	{
@@ -47,7 +50,6 @@ public class OneEditOrZeroEditsAway
 
 	public static boolean checkInsert(String str1, String str2)
 	{
-		int count=0;
 		for(int i=0, j=0; i<str1.length();)
 		{
 			if(str1.charAt(i)!=str2.charAt(j))

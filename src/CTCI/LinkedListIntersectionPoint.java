@@ -1,12 +1,14 @@
+package CTCI;
+
 import java.util.HashSet;
 
 class LinkedListIntersectionPoint
 {
-	int FindMergeNode(Node headA, Node headB) {
+	int FindMergeNode(Node<Integer> headA, Node<Integer> headB) {
     // Complete this function
     // Do not write the main method. 
-    HashSet<Node> hset = new HashSet<Node>();
-    Node cur = headA;
+    HashSet<Node<Integer>> hset = new HashSet<Node<Integer>>();
+    Node<Integer> cur = headA;
     while(cur!=null)
     {
         hset.add(cur);

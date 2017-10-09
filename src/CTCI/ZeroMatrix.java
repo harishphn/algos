@@ -1,3 +1,5 @@
+package CTCI;
+
 import java.util.Scanner;
 
 public class ZeroMatrix
@@ -43,6 +45,8 @@ public class ZeroMatrix
 				System.out.println();
 			}
 		}
+		
+		scan.close();
 	}
 
 	public static void zeroMatrix(int[][] matrix)

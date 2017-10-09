@@ -1,23 +1,20 @@
+package CTCI;
+
 import java.util.Scanner;
 import java.util.HashSet;
 
-class Node
-{
-	public int data;
-	public Node next;
-}
 
 public class LinkedListsRemoveDuplicates
 {
 	public static void main(String[] args)
 	{
 		Scanner scan = new Scanner(System.in);
-		Node list = null;
+		Node<Integer> list = null;
 		System.out.println("Enter linkedlist data. Enter -1 to stop");
 		int data = scan.nextInt();
 		while(data!=-1)
 		{
-			Node newNode = new Node();
+			Node<Integer> newNode = new Node<Integer>();
 			newNode.data = data;
 			newNode.next = null;
 
@@ -27,7 +24,7 @@ public class LinkedListsRemoveDuplicates
 			}
 			else
 			{
-				Node cur = list;
+				Node<Integer> cur = list;
 				while(cur.next!=null)
 				{
 					cur = cur.next;
@@ -40,7 +37,7 @@ public class LinkedListsRemoveDuplicates
 
 		System.out.println("Given linkedlist data");
 
-		Node cur = list;
+		Node<Integer> cur = list;
 		while(cur!=null)
 		{
 			System.out.print(cur.data + " ");
@@ -58,9 +55,11 @@ public class LinkedListsRemoveDuplicates
 			cur = cur.next;
 		}
 		
+		scan.close();
+		
 	}
 
-	public static void removeDuplicates(Node list)
+	public static void removeDuplicates(Node<Integer> list)
 	{
 		HashSet<Integer> hset = new HashSet<Integer>();
 		if(list == null){
@@ -68,8 +67,8 @@ public class LinkedListsRemoveDuplicates
 			return;
 		}
 			
-		Node cur = list.next;
-		Node prev = list;
+		Node<Integer> cur = list.next;
+		Node<Integer> prev = list;
 		hset.add(prev.data);
 
 		while(cur!=null)

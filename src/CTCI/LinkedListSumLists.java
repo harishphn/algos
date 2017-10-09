@@ -1,22 +1,18 @@
-import java.util.Scanner;
+package CTCI;
 
-class Node
-{
-	public int data;
-	public Node next;
-}
+import java.util.Scanner;
 
 class LinkedListSumLists
 {
 	public static void main(String[] args)
 	{
 		Scanner scan = new Scanner(System.in);
-		Node list = null;
+		Node<Integer> list = null;
 		System.out.println("Enter first linkedlist data. Enter -1 to stop");
 		int data = scan.nextInt();
 		while(data!=-1)
 		{
-			Node newNode = new Node();
+			Node<Integer> newNode = new Node<Integer>();
 			newNode.data = data;
 			newNode.next = null;
 
@@ -26,7 +22,7 @@ class LinkedListSumLists
 			}
 			else
 			{
-				Node cur = list;
+				Node<Integer> cur = list;
 				while(cur.next!=null)
 				{
 					cur = cur.next;
@@ -39,12 +35,12 @@ class LinkedListSumLists
 
 
 
-		Node list2 = null;
+		Node<Integer> list2 = null;
 		System.out.println("Enter second linkedlist data. Enter -1 to stop");
 		data = scan.nextInt();
 		while(data!=-1)
 		{
-			Node newNode = new Node();
+			Node<Integer> newNode = new Node<Integer>();
 			newNode.data = data;
 			newNode.next = null;
 
@@ -54,7 +50,7 @@ class LinkedListSumLists
 			}
 			else
 			{
-				Node cur = list2;
+				Node<Integer> cur = list2;
 				while(cur.next!=null)
 				{
 					cur = cur.next;
@@ -73,14 +69,16 @@ class LinkedListSumLists
 
 		display(list2);
 
-		Node list3 = sumLists2(list, list2);
+		Node<Integer> list3 = sumLists2(list, list2);
 
 		display(list3);
+		
+		scan.close();
 	}
 
-	public static void display(Node  list)
+	public static void display(Node<Integer>  list)
 	{
-		Node cur = list;
+		Node<Integer> cur = list;
 		while(cur!=null)
 		{
 			System.out.print(cur.data + " ");
@@ -89,13 +87,13 @@ class LinkedListSumLists
 		System.out.println();
 	}
 
-	public static Node sumLists2(Node list1, Node list2)
+	public static Node<Integer> sumLists2(Node<Integer> list1, Node<Integer> list2)
 	{
-		Node cur1 = list1;
-		Node cur2 = list2;
+		Node<Integer> cur1 = list1;
+		Node<Integer> cur2 = list2;
 		int sum = 0;
 		int prev = 0;
-		Node list3 = null;
+		Node<Integer> list3 = null;
 		while(cur1!=null || cur2!=null)
 		{
 			if(cur1!=null)
@@ -111,7 +109,7 @@ class LinkedListSumLists
 			sum = sum/10;
 			prev = sum;
 			sum = 0;
-			Node newNode = new Node();
+			Node<Integer> newNode = new Node<Integer>();
 			newNode.data = data;
 			newNode.next = null;
 
@@ -121,7 +119,7 @@ class LinkedListSumLists
 			}
 			else
 			{
-				Node nCur = list3;
+				Node<Integer> nCur = list3;
 				while(nCur.next!=null)
 				{
 					nCur = nCur.next;
@@ -139,7 +137,7 @@ class LinkedListSumLists
 		}
 		if(prev!=0)
 		{
-			Node newNode = new Node();
+			Node<Integer> newNode = new Node<Integer>();
 			newNode.data = prev;
 			newNode.next = null;
 
@@ -149,7 +147,7 @@ class LinkedListSumLists
 			}
 			else
 			{
-				Node nCur = list3;
+				Node<Integer> nCur = list3;
 				while(nCur.next!=null)
 				{
 					nCur = nCur.next;
@@ -160,11 +158,11 @@ class LinkedListSumLists
 		return list3;
 	}
 
-	public static Node sumLists(Node list1, Node list2)
+	public static Node<Integer> sumLists(Node<Integer> list1, Node<Integer> list2)
 	{
 		StringBuilder sb = new StringBuilder();
 
-		Node cur1 = list1;
+		Node<Integer> cur1 = list1;
 		while(cur1!=null)
 		{
 			sb.append(Integer.toString(cur1.data));
@@ -188,13 +186,13 @@ class LinkedListSumLists
 		sb.append(sum);
 		sb.reverse();
 		sum = Integer.parseInt(sb.toString());
-		Node list3 = null;
+		Node<Integer> list3 = null;
 		int n;
 		while(sum>0)
 		{
 			n = sum % 10;
 			sum = sum/10;
-			Node newNode = new Node();
+			Node<Integer> newNode = new Node<Integer>();
 			newNode.data = n;
 			newNode.next = null;
 			if(list3 == null)

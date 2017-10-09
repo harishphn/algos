@@ -1,3 +1,5 @@
+package CTCI;
+
 import java.util.Scanner;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,12 +14,10 @@ public class PalindromePermutation
 		String str = scan.nextLine();
 		HashMap<Character, Integer> hmap = new HashMap<Character, Integer>();
 		char[] sChars = str.toCharArray();
-		int trueLength=0;
 		for(int i=0;i<sChars.length;i++)
 		{
 			if(sChars[i] != ' ')
 			{
-				trueLength++;
 				if(hmap.containsKey(sChars[i]))
 				{
 					hmap.put(sChars[i], hmap.get(sChars[i])+1);
@@ -49,5 +49,7 @@ public class PalindromePermutation
 		{
 			System.out.println("Is a palindrome permutation");
 		}
+		
+		scan.close();
 	}
 }

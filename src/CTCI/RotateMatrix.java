@@ -1,3 +1,5 @@
+package CTCI;
+
 import java.util.Scanner;
 
 public class RotateMatrix
@@ -34,10 +36,11 @@ public class RotateMatrix
 				System.out.println();
 			}
 		}
+		scan.close();
 	}
 
 	public static void rotateMatrix(int[][] matrix)
 	{
-		for()
+		
 	}
 }

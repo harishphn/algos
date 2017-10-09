@@ -1,3 +1,5 @@
+package CTCI;
+
 import java.util.Scanner;
 import java.util.HashMap;
 
@@ -11,6 +13,7 @@ public class CheckPermutationStrings
 		String str1 = scan.next();
 		String str2 = scan.next();
 		System.out.println("Strings are permutation: " + isAPermutation(str1, str2));
+		scan.close();
 	}
 
 	public static boolean isAPermutation(String str1, String str2)

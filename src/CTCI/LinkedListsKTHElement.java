@@ -1,23 +1,19 @@
-import java.util.Scanner;
-import java.util.HashSet;
+package CTCI;
 
-class Node
-{
-	public int data;
-	public Node next;
-}
+import java.util.Scanner;
+
 
 public class LinkedListsKTHElement
 {
 	public static void main(String[] args)
 	{
 		Scanner scan = new Scanner(System.in);
-		Node list = null;
+		Node<Integer> list = null;
 		System.out.println("Enter linkedlist data. Enter -1 to stop");
 		int data = scan.nextInt();
 		while(data!=-1)
 		{
-			Node newNode = new Node();
+			Node<Integer> newNode = new Node<Integer>();
 			newNode.data = data;
 			newNode.next = null;
 
@@ -27,7 +23,7 @@ public class LinkedListsKTHElement
 			}
 			else
 			{
-				Node cur = list;
+				Node<Integer> cur = list;
 				while(cur.next!=null)
 				{
 					cur = cur.next;
@@ -40,7 +36,7 @@ public class LinkedListsKTHElement
 
 		System.out.println("Given linkedlist data");
 
-		Node cur = list;
+		Node<Integer> cur = list;
 		while(cur!=null)
 		{
 			System.out.print(cur.data + " ");
@@ -53,16 +49,17 @@ public class LinkedListsKTHElement
 
 		System.out.println("element " + pos + " from end is: " + getKthElement(list, pos));
 		
+		scan.close();
 	}
 
-	public static int getKthElement(Node list, int pos)
+	public static int getKthElement(Node<Integer> list, int pos)
 	{
 		if(list==null)
 		{
 			return -1;
 		}
 
-		Node cur = list;
+		Node<Integer> cur = list;
 		int count = 0;
 
 		while(cur!=null)

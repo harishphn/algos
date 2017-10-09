@@ -28,27 +28,31 @@ public class MyQueue<T>
 		}
 	}
 
-	public T remove()
+	public T remove() throws Exception
 	{
-		if(first!=null)
+		if(first==null)
 		{
-			T item = first.data;
-			first = first.next;
+			throw new Exception();
 		}
+
+		T item = first.data;
+		first = first.next;
+
 		if(first==null)
 		{
 			last = null;
 		}
 
-		return data;
+		return item;
 	}
 
-	public T peek()
+	public T peek() throws Exception
 	{
-		if(first!=null)
+		if(first==null)
 		{
-			return first.data;
+			throw new Exception();
 		}
+		return first.data;
 	}
 
 	public boolean isEmpty()

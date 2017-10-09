@@ -1,23 +1,19 @@
-import java.util.Scanner;
-import java.util.HashSet;
+package CTCI;
 
-class Node
-{
-	public int data;
-	public Node next;
-}
+import java.util.Scanner;
+
 
 public class LinkedListDeleteInMiddle
 {
 	public static void main(String[] args)
 	{
 		Scanner scan = new Scanner(System.in);
-		Node list = null;
+		Node<Integer> list = null;
 		System.out.println("Enter linkedlist data. Enter -1 to stop");
 		int data = scan.nextInt();
 		while(data!=-1)
 		{
-			Node newNode = new Node();
+			Node<Integer> newNode = new Node<Integer>();
 			newNode.data = data;
 			newNode.next = null;
 
@@ -27,7 +23,7 @@ public class LinkedListDeleteInMiddle
 			}
 			else
 			{
-				Node cur = list;
+				Node<Integer> cur = list;
 				while(cur.next!=null)
 				{
 					cur = cur.next;
@@ -52,11 +48,13 @@ public class LinkedListDeleteInMiddle
 
 		displayList(list);
 		
+		scan.close();
+		
 	}
 
-	public static void displayList(Node list)
+	public static void displayList(Node<Integer> list)
 	{
-		Node cur = list;
+		Node<Integer> cur = list;
 		while(cur!=null)
 		{
 			System.out.print(cur.data + " ");
@@ -65,14 +63,14 @@ public class LinkedListDeleteInMiddle
 		System.out.println();
 	}
 
-	public static void deleteInMiddle(Node list, int element)
+	public static void deleteInMiddle(Node<Integer> list, int element)
 	{
 		if(list==null)
 		{
 			return;
 		}
 
-		Node cur = list;
+		Node<Integer> cur = list;
 
 		if(cur.data==element)
 		{
@@ -80,7 +78,7 @@ public class LinkedListDeleteInMiddle
 			return;
 		}
 
-		Node prev=list;
+		Node<Integer> prev=list;
 		cur = cur.next;
 
 		while(cur!=null)

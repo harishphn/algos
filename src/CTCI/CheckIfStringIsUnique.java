@@ -1,5 +1,9 @@
+package CTCI;
+
 import java.util.Scanner;
 import java.util.HashSet;
+
+
 
 public class CheckIfStringIsUnique
 {
@@ -9,6 +13,8 @@ public class CheckIfStringIsUnique
 		String  str = scan.next();
 		System.out.println("String is unique: " + isUnique(str));
 		System.out.println("String is unique: " + isUniqueWithBits(str));
+		
+		scan.close();
 	}
 
 	public static boolean isUnique(String str)

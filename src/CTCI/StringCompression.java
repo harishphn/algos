@@ -1,3 +1,4 @@
+package CTCI;
 import java.util.Scanner;
 
 public class StringCompression
@@ -8,6 +9,7 @@ public class StringCompression
 		System.out.println("Enter a string");
 		String str = scan.next();
 		System.out.println(getCompressedString(str));
+		scan.close();
 	}
 	public static String getCompressedString(String str)
 	{
