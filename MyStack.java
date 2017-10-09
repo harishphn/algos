@@ -13,14 +13,15 @@ public class MyStack<T>
 
 	private StackNode<T> top;
 
-	public T pop()
+	public T pop() throws Exception
 	{
-		if(!isEmpty())
-		{
-			T item = top.data;
-			top = top.next;
-			return item;
+		if(isEmpty())
+		{	
+			throw new Exception();
 		}
+		T item = top.data;
+		top = top.next;
+		return item;
 	}
 
 	public void push(T data)
@@ -39,12 +40,13 @@ public class MyStack<T>
 		}
 	}
 
-	public T peek()
+	public T peek() throws Exception
 	{
-		if(!isEmpty())
+		if(isEmpty())
 		{
-			return top.data;
+			throw new Exception();
 		}
+		return top.data;
 	}
 
 	public boolean isEmpty()
