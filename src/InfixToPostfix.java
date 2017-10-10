@@ -16,6 +16,8 @@ public class InfixToPostfix
 		{
 			System.out.println(ex);
 		}
+		
+		scan.close();
 	}
 
 	public static String toPostfix(String infix) throws Exception
@@ -41,11 +43,11 @@ public class InfixToPostfix
 			}
 			else if(infix.charAt(i)==')')
 			{
-				while(stk.peek() != '(' || !stk.isEmpty())
+				while((!stk.isEmpty()) && (stk.peek() != '('))
 				{
 					sb.append(stk.pop());
 				}
-				if(!stk.isEmpty() && stk.peek()=='(')
+				if((!stk.isEmpty()) && (stk.peek()=='('))
 				{
 					stk.pop();
 				}
@@ -56,7 +58,7 @@ public class InfixToPostfix
 			}
 			else if(prec(infix.charAt(i), stk.peek())<=0)
 			{
-				while(prec(infix.charAt(i), stk.peek())>0 || !stk.isEmpty())
+				while((!stk.isEmpty()) && (prec(infix.charAt(i), stk.peek())<=0))
 				{
 					sb.append(stk.pop());
 				}
