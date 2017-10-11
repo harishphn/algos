@@ -50,7 +50,6 @@ public class PostfixEvaluation
 					case '/':
 							res = num2 / num1;
 							break;
-
 				}
 				stk.push(res);
 			}
