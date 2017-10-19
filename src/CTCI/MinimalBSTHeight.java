@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 class MinimalBSTHeight
 {
@@ -22,14 +23,18 @@ class MinimalBSTHeight
 
 	public static MyBSTNode<Integer> createBST(int left, int right)
 	{
+		if(right<left)
+		{
+			return null;
+		}
 		int mid = (left+right)/2;
 		MyBSTNode<Integer> node = new MyBSTNode<Integer>(alist.get(mid));
 		if(root==null)
 		{
 			root = node;
 		}
-		node.left = createBST(left, mid);
-		node.right = createBST(mid, right);
+		node.left = createBST(left, mid-1);
+		node.right = createBST(mid+1, right);
 		return node;
 	}
 }
