@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class LongestCommonSubsequence
+public class LongestPalindromeSubsequence
 {
 	public static void main(String[] args)
 	{
@@ -54,11 +54,22 @@ public class LongestCommonSubsequence
 			}
 			System.out.println();*/
 
+			int lastIndex = -1;
 			for(int i=str1.length(), j=str2.length();i>0 && j>0;)
 			{
 				if(str1.charAt(i-1)==str2.charAt(j-1))
 				{
-					sb.append(str1.charAt(i-1));
+					if(lastIndex==-1)
+					{
+						sb.append(str1.charAt(i-1));
+						lastIndex = i;
+					}
+					else if(i+1==lastIndex)
+					{
+						sb.append(str1.charAt(i-1));
+						lastIndex = i;
+					}
+					
 					i--;
 					j--;
 				}
