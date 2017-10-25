@@ -1,3 +1,4 @@
+package paypal;
 import java.util.Scanner;
 import java.util.ArrayDeque;
 public class ReplaceNumberWithNextBigIntInArray
