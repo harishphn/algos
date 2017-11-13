@@ -4,6 +4,12 @@ public class MergeSort
 {
 	public static void main(String[] args)
 	{
+		/*
+		Merge Sort is a Divide and Conquer algorithm. 
+		It divides input array in two halves, 
+		calls itself for the two halves and then merges the two sorted halves. 
+
+		*/
 		int[] numbers = getArray();
 		display(mergesort(numbers, 0, numbers.length-1));
 	}

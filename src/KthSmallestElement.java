@@ -1,30 +1,27 @@
 import java.util.Scanner;
 
-public class QuickSort
+public class KthSmallestElement
 {
 	public static void main(String[] args)
 	{
+		Scanner scan = new Scanner(System.in);
 		//Sorting: Quick Sort
-		/*
-		QuickSort is a Divide and Conquer algorithm. 
-		It picks an element as pivot and partitions the given array around the picked pivot. 
-		There are many different versions of quickSort that pick pivot in different ways.
-		
-		Always pick first element as pivot.
-		Always pick last element as pivot (implemented below)
-		Pick a random element as pivot.
-		Pick median as pivot.
-		*/
 		int[] qnumbers = getArray();
-		quicksort(qnumbers, 0, qnumbers.length-1);
-		display(qnumbers);
+		System.out.println("Enter value for k.");
+		int k = scan.nextInt();
+		System.out.println(kthsmallest(qnumbers, 0, qnumbers.length-1, k));
+		//display(qnumbers);
 	}
 
-	public static void quicksort(int[] nums, int left, int right)
+	public static int kthsmallest(int[] nums, int left, int right, int k)
 	{
 		if(left<right)
 		{
 			int mid = (left+right)/2;
+			if(mid-left==k-1)
+			{
+				return nums[mid];
+			}
 			int x = nums[mid];
 			int i=left;
 			int j = right;
@@ -47,15 +44,13 @@ public class QuickSort
 					j--;
 				}
 			}while(i<=j);
-			if(left<j)
+			if(mid-left>k-1)
 			{
-				quicksort(nums, left, j);
+				return kthsmallest(nums, left, j, k);
 			}
-			if(i<right)
-			{
-				quicksort(nums, i, right);
-			}
+			return kthsmallest(nums, i, right, k);
 		}
+		return Integer.MAX_VALUE;
 	}
 
 	public static void display(int[] nums)

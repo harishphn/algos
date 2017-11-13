@@ -11,7 +11,8 @@ public class DSLinkedHashMap
 		//You can also create a LinkedHashMap that returns its elements in the order in which they were last accessed
 
 		/*
-		Java LinkedHashMap class is Hash table and Linked list implementation of the Map interface, with predictable iteration order. It inherits HashMap class and implements the Map interface.
+		Java LinkedHashMap class is Hash table and Linked list implementation of the Map interface, with predictable iteration order. 
+		It inherits HashMap class and implements the Map interface.
 
 		The important points about Java LinkedHashMap class are:
 
