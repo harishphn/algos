@@ -7,29 +7,29 @@ The Node class is defined as follows:
     Node right;
      }
 */
-    ArrayList<Integer> alist = new ArrayList<Integer>();
-    boolean checkBST(Node root) {
-        if(root==null)
-        {
-            return true;
-        }
-        getList(root);
-        for(int i=1;i<alist.size();i++)
-        {
-            if(alist.get(i-1)>=alist.get(i))
-            {
-                return false;
-            }
-        }
-        return true;
+    ArrayList<Integer> alist=new ArrayList<Integer>();
+    boolean checkBST(Node root){
+    if(root==null)
+    {
+    return true;
+    }
+    getList(root);
+    for(int i=1;i<alist.size();i++)
+    {
+    if(alist.get(i-1)>=alist.get(i))
+    {
+    return false;
+    }
+    }
+    return true;
     }
     void getList(Node root)
     {
-        if(root==null)
-        {
-            return;
-        }
-        getList(root.left);
-        alist.add(root.data);
-        getList(root.right);
+    if(root==null)
+    {
+    return;
+    }
+    getList(root.left);
+    alist.add(root.data);
+    getList(root.right);
     }

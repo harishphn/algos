@@ -1,62 +1,50 @@
-public class MyQueue<T>
-{
-	private static class QueueNode<T>
-	{
-		private T data;
-		private QueueNode<T> next;
+public class MyQueue<T> {
+    private static class QueueNode<T> {
+        private T data;
+        private QueueNode<T> next;
 
-		public QueueNode(T data)
-		{
-			this.data = data;
-		}
-	}
+        public QueueNode(T data) {
+            this.data = data;
+        }
+    }
 
-	private QueueNode<T> first;
-	private QueueNode<T> last;
+    private QueueNode<T> first;
+    private QueueNode<T> last;
 
-	public void add(T item)
-	{
-		QueueNode<T> newNode = new  QueueNode<T>(item);
-		if(last!=null)
-		{
-			last.next = newNode;
-		}
-		last = newNode;
-		if(first==null)
-		{
-			first = last;
-		}
-	}
+    public void add(T item) {
+        QueueNode<T> newNode = new QueueNode<T>(item);
+        if (last != null) {
+            last.next = newNode;
+        }
+        last = newNode;
+        if (first == null) {
+            first = last;
+        }
+    }
 
-	public T remove() throws Exception
-	{
-		if(first==null)
-		{
-			throw new Exception();
-		}
+    public T remove() throws Exception {
+        if (first == null) {
+            throw new Exception();
+        }
 
-		T item = first.data;
-		first = first.next;
+        T item = first.data;
+        first = first.next;
 
-		if(first==null)
-		{
-			last = null;
-		}
+        if (first == null) {
+            last = null;
+        }
 
-		return item;
-	}
+        return item;
+    }
 
-	public T peek() throws Exception
-	{
-		if(first==null)
-		{
-			throw new Exception();
-		}
-		return first.data;
-	}
+    public T peek() throws Exception {
+        if (first == null) {
+            throw new Exception();
+        }
+        return first.data;
+    }
 
-	public boolean isEmpty()
-	{
-		return first == null;
-	}
+    public boolean isEmpty() {
+        return first == null;
+    }
 }

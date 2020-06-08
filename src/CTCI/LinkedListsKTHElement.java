@@ -3,85 +3,72 @@ package CTCI;
 import java.util.Scanner;
 
 
-public class LinkedListsKTHElement
-{
-	public static void main(String[] args)
-	{
-		Scanner scan = new Scanner(System.in);
-		Node<Integer> list = null;
-		System.out.println("Enter linkedlist data. Enter -1 to stop");
-		int data = scan.nextInt();
-		while(data!=-1)
-		{
-			Node<Integer> newNode = new Node<Integer>();
-			newNode.data = data;
-			newNode.next = null;
+public class LinkedListsKTHElement {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        Node<Integer> list = null;
+        System.out.println("Enter linkedlist data. Enter -1 to stop");
+        int data = scan.nextInt();
+        while (data != -1) {
+            Node<Integer> newNode = new Node<Integer>();
+            newNode.data = data;
+            newNode.next = null;
 
-			if(list == null)
-			{
-				list = newNode;
-			}
-			else
-			{
-				Node<Integer> cur = list;
-				while(cur.next!=null)
-				{
-					cur = cur.next;
-				}
+            if (list == null) {
+                list = newNode;
+            } else {
+                Node<Integer> cur = list;
+                while (cur.next != null) {
+                    cur = cur.next;
+                }
 
-				cur.next = newNode;
-			}
-			data = scan.nextInt();
-		}
+                cur.next = newNode;
+            }
+            data = scan.nextInt();
+        }
 
-		System.out.println("Given linkedlist data");
+        System.out.println("Given linkedlist data");
 
-		Node<Integer> cur = list;
-		while(cur!=null)
-		{
-			System.out.print(cur.data + " ");
-			cur = cur.next;
-		}
+        Node<Integer> cur = list;
+        while (cur != null) {
+            System.out.print(cur.data + " ");
+            cur = cur.next;
+        }
 
-		System.out.println("\nEnter the linked list position from the end");
+        System.out.println("\nEnter the linked list position from the end");
 
-		int pos = scan.nextInt();
+        int pos = scan.nextInt();
 
-		System.out.println("element " + pos + " from end is: " + getKthElement(list, pos));
-		
-		scan.close();
-	}
+        System.out.println("element " + pos + " from end is: " + getKthElement(list, pos));
 
-	public static int getKthElement(Node<Integer> list, int pos)
-	{
-		if(list==null)
-		{
-			return -1;
-		}
+        scan.close();
+    }
 
-		Node<Integer> cur = list;
-		int count = 0;
+    public static int getKthElement(Node<Integer> list, int pos) {
+        if (list == null) {
+            return -1;
+        }
 
-		while(cur!=null)
-		{
-			cur=cur.next;
-			count++;
-		}
+        Node<Integer> cur = list;
+        int count = 0;
 
-		if(pos>count)
-		{
-			return -1;
-		}
+        while (cur != null) {
+            cur = cur.next;
+            count++;
+        }
 
-		int temp = count-pos;
+        if (pos > count) {
+            return -1;
+        }
 
-		cur = list;
+        int temp = count - pos;
 
-		while(temp>0)
-		{
-			cur = cur.next;
-			temp--;
-		}
+        cur = list;
+
+        while (temp > 0) {
+            cur = cur.next;
+            temp--;
+        }
 
 		/*Node fast = list;
 		int count = 1;
@@ -99,6 +86,6 @@ public class LinkedListsKTHElement
 		System.out.println("Middle element is " + cur.data);*/
 
 
-		return cur.data;
-	}
+        return cur.data;
+    }
 }

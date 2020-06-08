@@ -1,9 +1,7 @@
 import java.util.PriorityQueue;
 
-public class DSPriorityQueue
-{
-	public static void main(String[] args)
-	{
+public class DSPriorityQueue {
+    public static void main(String[] args) {
 
 		/*
 		PriorityQueue doesn’t allow null
@@ -19,16 +17,15 @@ public class DSPriorityQueue
 		It inherits methods from AbstractQueue, AbstractCollection, Collection and Object class.
 		*/
 
-		//PriorityQueue
-		PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
-		pq.add(77);
-		pq.add(34);
-		pq.add(111);
-		pq.add(67);
-		while(pq.peek()!=null)
-		{
-			System.out.print(pq.poll() + " ");
-		}
-		System.out.println();
-	}
+        //PriorityQueue
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+        pq.add(77);
+        pq.add(34);
+        pq.add(111);
+        pq.add(67);
+        while (pq.peek() != null) {
+            System.out.print(pq.poll() + " ");
+        }
+        System.out.println();
+    }
 }

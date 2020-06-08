@@ -1,12 +1,10 @@
 import java.util.TreeSet;
 
-public class DSTreeSet
-{
-	public static void main(String[] args)
-	{
-		//TreeSet - uses tree for storage. Objects are stored in sorted, ascending order. Access
-		//and retrieval times are quite fast, which makes TreeSet an excellent choice when storing
-		//large amounts of sorted information that must be found quickly. 
+public class DSTreeSet {
+    public static void main(String[] args) {
+        //TreeSet - uses tree for storage. Objects are stored in sorted, ascending order. Access
+        //and retrieval times are quite fast, which makes TreeSet an excellent choice when storing
+        //large amounts of sorted information that must be found quickly.
 
 		/*
 		TreeSet implements the SortedSet interface so duplicate values are not allowed.
@@ -18,13 +16,13 @@ public class DSTreeSet
 		And operations like printing n elements in sorted order takes O(n) time.
 		*/
 
-		TreeSet<String> tset = new TreeSet<String>();
-		tset.add("ross");
-		tset.add("monica");
-		tset.add("rachel");
-		tset.add("chandler");
-		tset.add("joey");
-		tset.add("phoebe");
-		System.out.println(tset);
-	}
+        TreeSet<String> tset = new TreeSet<String>();
+        tset.add("ross");
+        tset.add("monica");
+        tset.add("rachel");
+        tset.add("chandler");
+        tset.add("joey");
+        tset.add("phoebe");
+        System.out.println(tset);
+    }
 }

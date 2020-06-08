@@ -1,7 +1,6 @@
-import  java.util.ArrayList;
+import java.util.ArrayList;
 
-public class TreeNode<T>
-{
-	T data;
-	public ArrayList<TreeNode<T>> children;
+public class TreeNode<T> {
+    T data;
+    public ArrayList<TreeNode<T>> children;
 }
