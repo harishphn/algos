@@ -31,9 +31,9 @@ class MyBSTNode<T extends Comparable<T>> {
         if (value.compareTo(data) == 0) {
             return true;
         } else if (value.compareTo(data) < 0) {
-            return (left == null) ? false : left.contains(value);
+            return (left != null) && left.contains(value);
         } else {
-            return (right == null) ? false : right.contains(value);
+            return (right != null) && right.contains(value);
         }
     }
 
