@@ -1,2 +1,3 @@
-# interview-prep
-Interview preparation and coding practice in Java.
+# algo-playground
+
+Algo Playground
