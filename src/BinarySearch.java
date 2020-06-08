@@ -16,11 +16,7 @@ public class BinarySearch {
 
     public static boolean binarySearch(int[] nums, int left, int right, int search) {
         if (left == right) {
-            if (nums[left] == search) {
-                return true;
-            } else {
-                return false;
-            }
+            return nums[left] == search;
         }
         int mid = (left + right) / 2;
         if (search == nums[mid]) {

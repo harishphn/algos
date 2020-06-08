@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class LRUCache extends LinkedHashMap<Integer, String> {
-    private int capacity;
+    private final int capacity;
 
 
     public LRUCache(int capacity, float loadFactor) {

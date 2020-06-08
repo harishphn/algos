@@ -23,10 +23,10 @@ public class DSLinkedHashMap {
 		*/
 
         LinkedHashMap<String, Double> lm = new LinkedHashMap<String, Double>();
-        lm.put("Ross Geller", new Double(1.11));
-        lm.put("John Reese", new Double(3.14));
-        lm.put("Neal Caffrey", new Double(1.43));
-        lm.put("John Snow", new Double(1.00));
+        lm.put("Ross Geller", 1.11);
+        lm.put("John Reese", 3.14);
+        lm.put("Neal Caffrey", 1.43);
+        lm.put("John Snow", 1.00);
 
         Set<Map.Entry<String, Double>> liset = lm.entrySet();
         for (Map.Entry<String, Double> entry : liset) {

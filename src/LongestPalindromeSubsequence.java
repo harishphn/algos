@@ -29,7 +29,7 @@ public class LongestPalindromeSubsequence {
                         table[i][j] = 1 + table[i - 1][j - 1];
                         //sb.append(str1.charAt(i-1));
                     } else {
-                        table[i][j] = table[i - 1][j] < table[i][j - 1] ? table[i][j - 1] : table[i - 1][j];
+                        table[i][j] = Math.max(table[i - 1][j], table[i][j - 1]);
                     }
                 }
             }

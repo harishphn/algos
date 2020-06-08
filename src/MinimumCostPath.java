@@ -43,12 +43,7 @@ public class MinimumCostPath {
     }
 
     public static int min(int i, int j, int k) {
-        int small;
-        if (i < j) {
-            small = i;
-        } else {
-            small = j;
-        }
+        int small = Math.min(i, j);
         if (k < small) {
             small = k;
         }

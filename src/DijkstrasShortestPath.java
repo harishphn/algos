@@ -15,8 +15,8 @@ public class DijkstrasShortestPath {
     }
 
     public static boolean anyUnvisitedNode(boolean[] nodeStatus) {
-        for (int i = 0; i < nodeStatus.length; i++) {
-            if (!nodeStatus[i]) {
+        for (boolean status : nodeStatus) {
+            if (!status) {
                 return true;
             }
         }
@@ -37,9 +37,6 @@ public class DijkstrasShortestPath {
 
     public static void computeShortestPath(int[][] graph) {
         boolean[] nodeStatus = new boolean[graph.length];
-        for (int i = 0; i < nodeStatus.length; i++) {
-            nodeStatus[i] = false;
-        }
 
         int[] shortestDistance = new int[graph.length];
         shortestDistance[0] = 0;

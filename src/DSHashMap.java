@@ -21,10 +21,10 @@ public class DSHashMap {
 
         //HashMap - a hash table with unique keys. <key, value>
         HashMap<String, Double> hm = new HashMap<String, Double>();
-        hm.put("John Reese", new Double(3.14));
-        hm.put("Neal Caffrey", new Double(1.43));
-        hm.put("John Snow", new Double(1.00));
-        hm.put("Ross Geller", new Double(1.11));
+        hm.put("John Reese", 3.14);
+        hm.put("Neal Caffrey", 1.43);
+        hm.put("John Snow", 1.00);
+        hm.put("Ross Geller", 1.11);
 
         Set<Map.Entry<String, Double>> set = hm.entrySet();
         for (Map.Entry<String, Double> entry : set) {

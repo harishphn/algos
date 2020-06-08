@@ -19,10 +19,10 @@ public class DSTreeMap {
 
 
         TreeMap<String, Double> tm = new TreeMap<String, Double>();
-        tm.put("Ross Geller", new Double(1.11));
-        tm.put("John Reese", new Double(3.14));
-        tm.put("Neal Caffrey", new Double(1.43));
-        tm.put("John Snow", new Double(1.00));
+        tm.put("Ross Geller", 1.11);
+        tm.put("John Reese", 3.14);
+        tm.put("Neal Caffrey", 1.43);
+        tm.put("John Snow", 1.00);
 
         Set<Map.Entry<String, Double>> tsset = tm.entrySet();
         for (Map.Entry<String, Double> entry : tsset) {

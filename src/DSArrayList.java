@@ -21,8 +21,8 @@ public class DSArrayList {
         al.add(34);
         al.add(56);
         al.remove(2); //index 2
-        for (int i = 0; i < al.size(); i++) {
-            System.out.print(al.get(i) + " ");
+        for (Integer integer : al) {
+            System.out.print(integer + " ");
         }
         //System.out.println("Contents of Array List: " + al);
     }

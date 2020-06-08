@@ -13,7 +13,7 @@ public class DSArrayClassAndCollectionAlgorithms {
         la.add(8);
 
         Comparator<Integer> r = Collections.reverseOrder();
-        Collections.sort(la, r);
+        la.sort(r);
 
         System.out.print("List sorted in reverse order: ");
         for (int i : la) {
@@ -32,7 +32,7 @@ public class DSArrayClassAndCollectionAlgorithms {
         System.out.println("Maximum: " + Collections.max(la));
 
         //Arrays class
-        int array[] = new int[10];
+        int[] array = new int[10];
         for (int i = 0; i < 10; i++) {
             array[i] = -3 * i;
         }

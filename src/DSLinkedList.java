@@ -18,8 +18,8 @@ public class DSLinkedList {
         list.add(1, "str1a");
         list.remove("Str2");
 
-        for (int i = 0; i < list.size(); i++) {
-            System.out.print(list.get(i) + " ");
+        for (String s : list) {
+            System.out.print(s + " ");
         }
 
 
