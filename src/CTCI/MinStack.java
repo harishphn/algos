@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class MinStack {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         MyStack<Integer> stk = new MyStack<Integer>();
         MyStack<Integer> minStk = new MyStack<Integer>();
         Scanner scan = new Scanner(System.in);
@@ -33,7 +33,7 @@ public class MinStack {
             } while (choice != 4);
         }
         catch (Exception ex) {
-            System.out.println(ex);
+            System.out.println(ex.getMessage());
         }
     }
 }
