@@ -1,6 +1,4 @@
-package paypal;
-
-//Credits - GeeksForGeeks. 
+//Credits - GeeksForGeeks.
 //Java program to print all permutations of a
 //given string.
 public class PrintAllPermutationsOfString {

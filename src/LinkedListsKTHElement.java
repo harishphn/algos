@@ -1,10 +1,7 @@
-package CTCI;
-
-import java.util.HashSet;
 import java.util.Scanner;
 
 
-public class LinkedListsRemoveDuplicates {
+public class LinkedListsKTHElement {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         Node<Integer> list = null;
@@ -36,45 +33,57 @@ public class LinkedListsRemoveDuplicates {
             cur = cur.next;
         }
 
-        removeDuplicates(list);
+        System.out.println("\nEnter the linked list position from the end");
 
-        System.out.println("\nLinkedlist data after removing duplicates");
+        int pos = scan.nextInt();
 
-        cur = list;
-        while (cur != null) {
-            System.out.print(cur.data + " ");
-            cur = cur.next;
-        }
+        System.out.println("element " + pos + " from end is: " + getKthElement(list, pos));
 
         scan.close();
-
     }
 
-    public static void removeDuplicates(Node<Integer> list) {
-        HashSet<Integer> hset = new HashSet<Integer>();
+    public static int getKthElement(Node<Integer> list, int pos) {
         if (list == null) {
-            System.out.println("The list is empty.");
-            return;
+            return -1;
         }
 
-        Node<Integer> cur = list.next;
-        Node<Integer> prev = list;
-        hset.add(prev.data);
+        Node<Integer> cur = list;
+        int count = 0;
 
         while (cur != null) {
-            if (hset.contains(cur.data)) {
-                //System.out.println("###prev " + prev.data);
-                //System.out.println("###cur " + cur.data);
-                prev.next = cur.next;
-                //cur = prev.next;
-            } else {
-                //System.out.println("+++prev " + prev.data);
-                //System.out.println("+++###cur " + cur.data);
-                hset.add(cur.data);
-                prev = cur;
-            }
             cur = cur.next;
+            count++;
         }
 
+        if (pos > count) {
+            return -1;
+        }
+
+        int temp = count - pos;
+
+        cur = list;
+
+        while (temp > 0) {
+            cur = cur.next;
+            temp--;
+        }
+
+		/*Node fast = list;
+		int count = 1;
+
+		while(fast!=null)
+		{
+			if(fast.next == null)
+			{
+				break;
+			}
+			fast = fast.next.next;
+			cur = cur.next;
+			count++;
+		}
+		System.out.println("Middle element is " + cur.data);*/
+
+
+        return cur.data;
     }
 }

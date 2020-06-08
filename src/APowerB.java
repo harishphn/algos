@@ -1,5 +1,3 @@
-package paypal;
-
 import java.util.Scanner;
 
 public class APowerB {

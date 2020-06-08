@@ -1,5 +1,3 @@
-package CTCI;
-
 import java.util.HashSet;
 
 class LinkedListIntersectionPoint {

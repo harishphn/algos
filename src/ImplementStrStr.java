@@ -1,5 +1,3 @@
-package leet;
-
 import java.util.Scanner;
 
 public class ImplementStrStr {
